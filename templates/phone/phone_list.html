@@ -1,0 +1,9 @@
+{% extends '_base.html'%} {% block content%}
+<h1>Welcome to phones list page</h1>
+<a href="{% url 'phones_create' %}"><button>ADD NEW PHONE</button></a>
+{% for phone in Phones%}
+<h3><a href="{% url 'phones_detail' phone.pk%}">{{phone.name}}</a></h3>
+
+<a href="{% url 'phones_update' phone.pk%}"><button>Update</button></a>
+<a href="{% url 'phones_delete' phone.pk%}"><button>Delete</button></a>
+{%endfor%} {% endblock content%}
